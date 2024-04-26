@@ -11,17 +11,17 @@ Base = declarative_base()
 class UserPlanetFavorite(Base):
     __tablename__ = "user_planet_favorites"
 
-    user_id = Column(Integer, ForeignKey("users.id"), primary_key=True)
+    user_id = Column(Integer, ForeignKey("User.id"), primary_key=True)
     planet_id = Column(Integer, ForeignKey("planets.id"), primary_key=True)
 
 class UserCharacterFavorite(Base):
     __tablename__ = "user_character_favorites"
 
-    user_id = Column(Integer, ForeignKey("users.id"), primary_key=True)
+    user_id = Column(Integer, ForeignKey("User.id"), primary_key=True)
     character_id = Column(Integer, ForeignKey("characters.id"), primary_key=True)
 
 class User(Base):
-    __tablename__ = "users"
+    __tablename__ = "User"
 
     id = Column(Integer, primary_key=True)
     email = Column(String, nullable=False)
